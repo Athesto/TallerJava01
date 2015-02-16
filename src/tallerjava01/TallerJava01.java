@@ -84,7 +84,8 @@ public class TallerJava01 {
         //End Test box---------------------------------
         
         switch (Integer.parseInt(opt)){
-            case 3:
+            case 3: //Programa 3: Codificador de Datos
+                MyNum.setValue(Integer.parseInt((JOptionPane.showInputDialog("Ingresar codigo"))));
                 
                 break;
                 
