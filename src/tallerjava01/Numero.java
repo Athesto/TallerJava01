@@ -11,7 +11,56 @@ package tallerjava01;
  */
 public class Numero {
     private long value = 1; //Valor del numero
-         
+    private long codeValue;
+    private final int iteracion = 100; //valor de iteración
+    
+
+    public long getCodeValue() {
+        long valorPreCodificado;
+        valorPreCodificado = getValue();
+        
+        return codeValue;
+    }    
+
+    
+    public double euler(){
+        return euler(1, this.iteracion);
+    }
+
+    public double euler(double variable){
+            return euler(variable, this.iteracion);
+    }
+    
+    public double euler(double variable,int iteracion){
+        if (iteracion==0){
+            return 1;
+        } else {
+            return (expoint(variable,iteracion)/factorial(iteracion) + euler(variable,iteracion-1));
+        }        
+    }
+    
+    public double expoint(double base, int exponente){
+        if (exponente ==0) return 1;
+        else return base * expoint(base,exponente-1);
+    }
+    
+    public float factorial(){
+        if (value == 0) {
+            return 1;
+        } else {
+            return value * factorial(value-1);
+        }
+    }
+      
+    public float factorial(float value){
+        if (value == 0) {
+            return 1;
+        } else {
+            return value * factorial(value-1);
+        }
+    }
+        
+             
     public  boolean isPrime() {
         long n=value;
     if (n <= 3) {
@@ -27,6 +76,12 @@ public class Numero {
         return true;
     }
 }
+
+
+
+    public void setCodeValue(long codeValue) {
+        this.codeValue = codeValue;
+    }
 
 /**
  *  Retorna el valor que tiene el numero
@@ -44,7 +99,4 @@ public class Numero {
         this.value = value;
     }
     
-    public class Nota extends Numero{
-        
-    }
 }
