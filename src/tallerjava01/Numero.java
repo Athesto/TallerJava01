@@ -20,9 +20,29 @@ public class Numero {
         valorPreCodificado = getValue();
         
         return codeValue;
-    }    
-
+    }
     
+    
+    public int[] makeArray(int inValue){
+        int[] outVector = {1,2,3};
+        int[] tmpVector;
+       tmpVector = divnum10(inValue);
+        return outVector;
+    }
+    
+    
+    public int[] divnum10 (int value){
+        int[] vector = new int[2];
+        vector[0] = value/10;
+        vector[1] = value%10;
+        return vector;
+    
+    }
+    
+    public int mod10(int value){
+        return value%10;        
+    }
+
     public double euler(){
         return euler(1, this.iteracion);
     }

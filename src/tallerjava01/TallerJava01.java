@@ -79,7 +79,25 @@ public class TallerJava01 {
         */
         //lSystem.out.println(MyNum.euler(5));
         
-        //System.exit(0);
+        int a = 1234;
+        System.out.println(a);
+        int[] b = new int[4];
+        
+        System.out.println("");
+       
+        b[0]= a;
+        b[1]=(b[0]/10);b[0]=(b[0]%10);
+        b[2]=(b[1]/10);b[1]=(b[1]%10);
+        b[3]=(b[2]/10);b[2]=(b[2]%10);
+        
+        int x = b.length;
+        
+        
+        //for (int i =0; i <= 10; i++) System.out.println(i + ": "+ x[i] + " esto es pi " + Math.PI);
+        
+        
+        
+        System.exit(0);
         
         //End Test box---------------------------------
         
