@@ -13,23 +13,63 @@ public class Numero {
     private long value = 1; //Valor del numero
     private long codeValue;
     private final int iteracion = 100; //valor de iteración
+    private int [] vectorValue;
     
 
-    public long getCodeValue() {
-        long valorPreCodificado;
-        valorPreCodificado = getValue();
+    public void setCodeValue() {
+        int[] valorPreCodificado;
+        makeArray();
+        valorPreCodificado = getVectorValue();
+        for (int i = 0;i<4;i++){
+            if (valorPreCodificado[i] >=3) valorPreCodificado[i]-=3;
+            else valorPreCodificado[i]+=7;
+        }
+        valorPreCodificado = swapVector(valorPreCodificado,0,2);
+        valorPreCodificado = swapVector(valorPreCodificado,1,3);
+        setVectorValue(valorPreCodificado);        
+    }
+    public void getUncodeValue() {
+        makeArray();
+        int[] valorDecodificado = getVectorValue();
+        valorDecodificado = swapVector(valorDecodificado,0,2);
+        valorDecodificado = swapVector(valorDecodificado,1,3);
         
-        return codeValue;
+        for (int i = 0;i<4;i++){
+            if (valorDecodificado[i] <=6) valorDecodificado[i]+=3;
+            else valorDecodificado[i]-=7;
+        }
+        setVectorValue(valorDecodificado);        
     }
     
     
-    public int[] makeArray(int inValue){
-        int[] outVector = {1,2,3};
-        int[] tmpVector;
-       tmpVector = divnum10(inValue);
-        return outVector;
+    
+    public int[] swapVector(int[] vector, int FromSlot, int ToSlot){
+        int tmp;
+        tmp = vector[ToSlot];
+        vector[ToSlot] = vector[FromSlot];
+        vector[FromSlot] = tmp;
+        return vector;
+    
     }
     
+    
+    public void makeArray(){
+        int[] b = new int[4];
+        b[0]= (int)value;
+        b[1]=(b[0]/10);b[0]=(b[0]%10);
+        b[2]=(b[1]/10);b[1]=(b[1]%10);
+        b[3]=(b[2]/10);b[2]=(b[2]%10);
+        vectorValue = b;
+    }
+    
+    
+    
+    public int[] includevalue(int[] vectorIn, int value){
+        int[] vectorOut = new int[vectorIn.length+1];
+        System.arraycopy(vectorIn, 0, vectorOut, 0, vectorIn.length);
+        vectorOut[vectorOut.length-1] = value;
+        return vectorOut;
+    }
     
     public int[] divnum10 (int value){
         int[] vector = new int[2];
@@ -117,6 +157,14 @@ public class Numero {
  */
     public void setValue(long value) {
         this.value = value;
+    }
+
+    public int[] getVectorValue() {
+        return vectorValue;
+    }
+
+    public void setVectorValue(int[] vectorValue) {
+        this.vectorValue = vectorValue;
     }
     
 }

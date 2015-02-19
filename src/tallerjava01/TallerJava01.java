@@ -78,7 +78,7 @@ public class TallerJava01 {
         for (int i=1;i<=200;i+=6) System.out.println(i + "\t= " + MyNum.euler(i)+"\t");
         */
         //lSystem.out.println(MyNum.euler(5));
-        
+        /*
         int a = 1234;
         System.out.println(a);
         int[] b = new int[4];
@@ -92,19 +92,43 @@ public class TallerJava01 {
         
         int x = b.length;
         
+        int[] c = new int [x+1];
         
-        //for (int i =0; i <= 10; i++) System.out.println(i + ": "+ x[i] + " esto es pi " + Math.PI);
+        System.arraycopy(b, 0, c, 0, x);
+        
+        c[x]=4;
+        
+        Numero objNum = new Numero();
+        
+        int[] d;
+        c = objNum.includeSlot(c);
         
         
+        for (int i = 0; i < c.length; i++) System.out.println(b[i] + " " + c[i]);
         
-        System.exit(0);
+        
+        */
+        //System.exit(0);
         
         //End Test box---------------------------------
         
         switch (Integer.parseInt(opt)){
-            case 3: //Programa 3: Codificador de Datos
-                MyNum.setValue(Integer.parseInt((JOptionPane.showInputDialog("Ingresar codigo"))));
+            case 4: //Programa 4: Decodificacion de Datos
                 
+                MyNum.setValue(Integer.parseInt((JOptionPane.showInputDialog("Ingresar codigo codificado"))));
+                MyNum.getUncodeValue();
+                for (int i = 3; i>=0;i--) System.out.print(MyNum.getVectorValue()[i]);
+                System.out.println();
+                
+                
+                break;
+                
+            case 3: //Programa 3: Codificador de Datos
+                
+                MyNum.setValue(Integer.parseInt((JOptionPane.showInputDialog("Ingresar codigo"))));
+                MyNum.setCodeValue();
+                for (int i = 3; i>=0;i--) System.out.print(MyNum.getVectorValue()[i]);
+                System.out.println();
                 break;
                 
             case 2: //Programa 2: Promedio de asignatura
