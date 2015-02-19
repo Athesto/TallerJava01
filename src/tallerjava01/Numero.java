@@ -12,7 +12,7 @@ package tallerjava01;
 public class Numero {
     private long value = 1; //Valor del numero
     private long codeValue;
-    private final int iteracion = 100; //valor de iteración
+    private int iteracion = 400; //valor de iteración
     private int [] vectorValue;
     
 
@@ -88,7 +88,10 @@ public class Numero {
     }
 
     public double euler(double variable){
-            return euler(variable, this.iteracion);
+        if (variable<=10) this.iteracion = 100;
+        else 
+            this.iteracion = 4*(int)variable;
+        return euler(variable, this.iteracion);
     }
     
     public double euler(double variable,int iteracion){
@@ -104,7 +107,7 @@ public class Numero {
         else return base * expoint(base,exponente-1);
     }
     
-    public float factorial(){
+    public double factorial(){
         if (value == 0) {
             return 1;
         } else {

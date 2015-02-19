@@ -133,12 +133,12 @@ public class TallerJava01 {
                 
             case 2: //Programa 2: Promedio de asignatura
                 Nota misNotas = new Nota();
-                misNotas.setNombre(JOptionPane.showInputDialog("Nombre dle estudiante"));
+                misNotas.setNombre(JOptionPane.showInputDialog("Nombre del estudiante"));
                 misNotas.setNumNotas(Integer.parseInt(JOptionPane.showInputDialog("Cantidad de evaluaciones")));
                 misNotas.calcular();
                 
                 break;
-            case 7: //Programa 7: Calcular el Euler (e)
+            case 7: //Programa 7: Calcular el Euler (e^n)
                 System.out.println("7) Calculo de e^n: \n");                
                 MyNum.setValue(Long.parseLong(JOptionPane.showInputDialog("Introducir n, para hallar e^n: ")));
                 System.out.println("e^" + MyNum.getValue() + " = " + MyNum.euler(MyNum.getValue()));
@@ -173,8 +173,7 @@ public class TallerJava01 {
                 System.out.println("\n\nTotal: " + contador + " numeros");
                 break;
                 
-            //Programa 2: Rango de numeros primos
-            default:
+           default:
                 break;
         }
         

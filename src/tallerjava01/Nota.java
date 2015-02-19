@@ -31,7 +31,7 @@ public class Nota {
     
     public void calcular(){
         int i;
-        System.out.println("\nCalculo par el Estudiante: " + Nombre);
+        System.out.println("\nCalculo para el Estudiante: " + Nombre);
         setPesos();
         System.out.println("\n");
         setNotas();
@@ -44,7 +44,7 @@ public class Nota {
     private void setPesos (){
         ListaPesos = new float[numNotas]; 
         for (int i = 0;i<numNotas;i++)
-            ListaPesos[i]= Float.parseFloat(console.readLine("Peso de Nota " + i + ": "));            
+            ListaPesos[i]= Float.parseFloat(console.readLine("Peso de Nota " + i+1 + ": "));            
         
     }    
     private void setNotas (){
