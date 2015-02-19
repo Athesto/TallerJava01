@@ -115,7 +115,7 @@ public class Numero {
         }
     }
       
-    public float factorial(float value){
+    public double factorial(double value){
         if (value == 0) {
             return 1;
         } else {
