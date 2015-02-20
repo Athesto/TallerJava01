@@ -10,9 +10,9 @@ package tallerjava01;
  * @author Gustavo
  */
 public class Numero {
-    private long value = 1; //Valor del numero
-    private long codeValue;
-    private int iteracion = 400; //valor de iteración
+    private double value = 1; //Valor del numero
+    private double codeValue;
+    private double iteracion = 50; //valor de iteración
     private int [] vectorValue;
     
 
@@ -71,7 +71,7 @@ public class Numero {
         return vectorOut;
     }
     
-    public int[] divnum10 (int value){
+    private int[] divnum10 (int value){
         int[] vector = new int[2];
         vector[0] = value/10;
         vector[1] = value%10;
@@ -88,13 +88,19 @@ public class Numero {
     }
 
     public double euler(double variable){
-        if (variable<=10) this.iteracion = 100;
-        else 
-            this.iteracion = 4*(int)variable;
-        return euler(variable, this.iteracion);
+        double nueva = 0, vieja, iteracion = 0;
+        do {
+            vieja = nueva;
+            nueva += expoint(variable,iteracion)/factorial(iteracion);
+            iteracion++;
+        } while (Math.abs((vieja-nueva)/vieja)>0.0001);
+        return nueva;
     }
     
-    public double euler(double variable,int iteracion){
+    
+    
+    public double euler(double variable,double iteracion){
+        double pasada=variable;
         if (iteracion==0){
             return 1;
         } else {
@@ -102,7 +108,7 @@ public class Numero {
         }        
     }
     
-    public double expoint(double base, int exponente){
+    public double expoint(double base, double exponente){
         if (exponente ==0) return 1;
         else return base * expoint(base,exponente-1);
     }
@@ -115,7 +121,7 @@ public class Numero {
         }
     }
       
-    public float factorial(float value){
+    public double factorial(double value){
         if (value == 0) {
             return 1;
         } else {
@@ -125,7 +131,7 @@ public class Numero {
         
              
     public  boolean isPrime() {
-        long n=value;
+        double n=value;
     if (n <= 3) {
         return n > 1;
     } else if (n % 2 == 0 || n % 3 == 0) {
@@ -142,7 +148,7 @@ public class Numero {
 
 
 
-    public void setCodeValue(long codeValue) {
+    public void setCodeValue(double codeValue) {
         this.codeValue = codeValue;
     }
 
@@ -151,14 +157,14 @@ public class Numero {
  * 
  * @return 
  */
-    public long getValue() {
+    public double getValue() {
         return value;
     }
 /**
  * Se define el valor del numero (entero)
  * @param value 
  */
-    public void setValue(long value) {
+    public void setValue(double value) {
         this.value = value;
     }
 

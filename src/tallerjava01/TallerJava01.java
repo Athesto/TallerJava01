@@ -19,6 +19,7 @@ public class TallerJava01 {
      */
     public static void main(String[] args) {
         String opt;
+        
         System.out.println("Bienvenido a la Aplicacion: TallerJava01\n\n"
                 + "Nota: Para poder continuar con la Aplicacion recomendamos\n"
                 + "abrir el programa desde la linea comando\n"
@@ -36,80 +37,9 @@ public class TallerJava01 {
         
         Numero MyNum = new Numero(); //numero en cuestión
         
-        
-        //Test box -------------------
-        /*
-        Console console = System.console();
-        String [] anArray = new String[3];
-
-        Numero miNum = new Numero();
-        miNum.setValue(9);
-        System.out.println(miNum.factorial());
-        System.out.println(miNum.factorial(7));
-        System.exit(0);
-        
-        int [] vector;
-        int tam;
-        boolean deacuerdo = false;
-        //do{
-            tam = Integer.parseInt(console.readLine("tamaño de datos: "));
-            //anArray[1] = console.readLine("Enter input: ");
-            vector = new int[tam];
-            System.out.printf("{");
-            for (int i =0;i<=vector.length-2;i++){
-                System.out.printf(vector[i] +" ,");
-            }
-            System.out.println(vector[vector.length-1] + "}");
-        
-            vector = new int[tam+1];
-            System.out.printf("{");
-            for (int i =0;i<=vector.length-2;i++){
-                System.out.printf(vector[i] +" ,");
-            }
-        //} do while (deacuerdo == false);
-        System.out.println(vector[vector.length-1] + "}");
-        
-        
-        anArray[1] = JOptionPane.showInputDialog("Colocar los porcentajes separados por coma");
-        
-        
-        
-        
-        for (int i=1;i<=200;i+=6) System.out.println(i + "\t= " + MyNum.euler(i)+"\t");
-        */
-        //lSystem.out.println(MyNum.euler(5));
-        /*
-        int a = 1234;
-        System.out.println(a);
-        int[] b = new int[4];
-        
-        System.out.println("");
-       
-        b[0]= a;
-        b[1]=(b[0]/10);b[0]=(b[0]%10);
-        b[2]=(b[1]/10);b[1]=(b[1]%10);
-        b[3]=(b[2]/10);b[2]=(b[2]%10);
-        
-        int x = b.length;
-        
-        int[] c = new int [x+1];
-        
-        System.arraycopy(b, 0, c, 0, x);
-        
-        c[x]=4;
-        
-        Numero objNum = new Numero();
-        
-        int[] d;
-        c = objNum.includeSlot(c);
-        
-        
-        for (int i = 0; i < c.length; i++) System.out.println(b[i] + " " + c[i]);
-        
-        
-        */
-        //System.exit(0);
-        
+        //hola esto es unico para el dev version
+       //Test box -------------------
+     
         //End Test box---------------------------------
         
         switch (Integer.parseInt(opt)){
@@ -140,7 +70,7 @@ public class TallerJava01 {
                 break;
             case 7: //Programa 7: Calcular el Euler (e^n)
                 System.out.println("7) Calculo de e^n: \n");                
-                MyNum.setValue(Long.parseLong(JOptionPane.showInputDialog("Introducir n, para hallar e^n: ")));
+                MyNum.setValue(Double.parseDouble(JOptionPane.showInputDialog("Introducir n, para hallar e^n: ")));
                 System.out.println("e^" + MyNum.getValue() + " = " + MyNum.euler(MyNum.getValue()));
                 
                 break;
